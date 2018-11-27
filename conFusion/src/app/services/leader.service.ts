@@ -3,13 +3,17 @@ import {Leader} from '../shared/leader';
 import {LEADERS} from '../shared/leaders';
 import { Observable, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
+// import { map } from 'rxjs/operators';
+// import { HttpClient } from '@angular/common/http';
+// import { baseURL } from '../shared/baseurl';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LeaderService {
 
-  constructor() { }
+   constructor() { }
+  // constructor(private http: HttpClient) { }
 
   getLeaders(): Observable<Leader[]> {
     return of(LEADERS).pipe(delay(2000));

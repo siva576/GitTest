@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild  } from '@angular/core';
+import { Component, OnInit, Input, ViewChild , Inject } from '@angular/core';
  import { Dish } from '../shared/dish';
 // import { DISHES } from '../shared/dishes';
 import { DishService } from '../services/dish.service';
@@ -24,6 +24,7 @@ export class DishdetailComponent implements OnInit {
   @ViewChild('cform') cFormDirective;
   commentForm: FormGroup;
   comment: Comment;
+    errMess: string;
 
 
   formErrors = {
@@ -58,7 +59,9 @@ export class DishdetailComponent implements OnInit {
   constructor(private dishservice: DishService,
     private route: ActivatedRoute,
     private location: Location,
-    private fb: FormBuilder) {
+    private fb: FormBuilder,
+     @Inject('BaseURL') private BaseURL
+  ) {
 
        this.createForm();
     }
@@ -66,7 +69,7 @@ export class DishdetailComponent implements OnInit {
   ngOnInit() {
         this.dishservice.getDishIds().subscribe(dishIds => this.dishIds = dishIds);
     this.route.params.pipe(switchMap((params: Params) => this.dishservice.getDish(params['id'])))
-    .subscribe(dish => { this.dish = dish; this.setPrevNext(dish.id); });
+    .subscribe(dish => { this.dish = dish; this.setPrevNext(dish.id); }, errmess => this.errMess = <any>errmess);
 
     //  const id = +this.route.snapshot.params['id'];
     //  this.dishservice.getDish(id).then(dishes => this.dish = dishes);
@@ -118,6 +121,7 @@ export class DishdetailComponent implements OnInit {
       console.log(this.commentForm.value);
       this.commentForm.value.rating  = this.commentForm.value.rating + ' Stars' ;
       this.commentForm.value.date  = formatDate(new Date(), 'yyyy/MM/dd', 'en');
+      //  new Date().toISOString();
        this.dish.comments.push(this.commentForm.value);
         this.comment = this.commentForm.value;
       this.dish.comments.push(
@@ -126,7 +130,7 @@ export class DishdetailComponent implements OnInit {
     this.commentForm.reset({
       author: '',
       comment: '',
-      rating: ''
+      rating: 5
     });
     this.cFormDirective.resetForm();
   }

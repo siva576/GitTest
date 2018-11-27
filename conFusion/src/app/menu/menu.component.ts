@@ -14,7 +14,7 @@ export class MenuComponent implements OnInit {
   errMess: string;
   dishes: Dish[];
   // dishes: Dish[] = DISHES;
-  // selectedDish: Dish;
+   selectedDish: Dish;
   constructor(private dishService: DishService,
      @Inject('BaseURL') private BaseURL
   ) { }
@@ -27,8 +27,8 @@ export class MenuComponent implements OnInit {
       errmess => this.errMess = <any>errmess);
   }
 
-  // onSelect(dish: Dish) {
-  //   this.selectedDish = dish;
-  // }
+  onSelect(dish: Dish) {
+    this.selectedDish = dish;
+  }
 
 }

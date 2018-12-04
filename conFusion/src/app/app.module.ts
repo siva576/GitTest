@@ -25,6 +25,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { PromotionService } from './services/promotion.service';
 import { LeaderService } from './services/leader.service';
 import { ProcessHttpmsgService } from './services/process-httpmsg.service';
+import { FeedbackService } from './services/feedback.service';
 import { LoginComponent } from './login/login.component';
 
 import { MatDialogModule } from '@angular/material/dialog';
@@ -82,7 +83,7 @@ import { HighlightDirective } from './directives/highlight.directive';
     HttpClientModule
   ],
   providers: [DishService, PromotionService, LeaderService,
-    {provide: 'BaseURL', useValue: baseURL}, ProcessHttpmsgService],
+    {provide: 'BaseURL', useValue: baseURL}, ProcessHttpmsgService, FeedbackService],
   bootstrap: [AppComponent],
   entryComponents: [
     LoginComponent

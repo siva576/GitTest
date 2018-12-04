@@ -1,12 +1,13 @@
 
 import { Injectable } from '@angular/core';
 import { Promotion } from '../shared/promotion';
-import { PROMOTIONS } from '../shared/promotions';
+// import { PROMOTIONS } from '../shared/promotions';
 import { Observable, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
-// import { map } from 'rxjs/operators';
-// import { HttpClient } from '@angular/common/http';
-// import { baseURL } from '../shared/baseurl';
+import { map, catchError } from 'rxjs/operators';
+import { HttpClient , HttpHeaders } from '@angular/common/http';
+import { baseURL } from '../shared/baseurl';
+import {ProcessHttpmsgService} from './process-httpmsg.service';
 
 
 @Injectable({
@@ -14,20 +15,23 @@ import { delay } from 'rxjs/operators';
 })
 export class PromotionService {
 
-  constructor() { }
+  // constructor() { }
+   constructor(private http: HttpClient, private processHTTPMsgService: ProcessHttpmsgService) { }
 
-  // constructor(private http: HttpClient) { }
-
-  getPromotions(): Observable<Promotion[]> {
-    return of(PROMOTIONS).pipe(delay(2000));
+  getPromotions(): Observable<Promotion> {
+   //  return of(PROMOTIONS).pipe(delay(2000));
+   return this.http.get<Promotion>(baseURL + 'PROMOTIONS').pipe(catchError(this.processHTTPMsgService.handleError));
   }
 
   getPromotion(id: string): Observable<Promotion> {
-    return of(PROMOTIONS.filter((dish) => (dish.id === id))[0]).pipe(delay(2000));
+   // return of(PROMOTIONS.filter((dish) => (dish.id === id))[0]).pipe(delay(2000));
+    return this.http.get<Promotion>(baseURL + 'promotions/' + id).pipe(catchError(this.processHTTPMsgService.handleError));
   }
 
   getFeaturedPromotion(): Observable<Promotion> {
-    return of(PROMOTIONS.filter((dish) => dish.featured)[0]).pipe(delay(2000));
+    // return of(PROMOTIONS.filter((dish) => dish.featured)[0]).pipe(delay(2000));
+    return this.http.get<Promotion[]>(baseURL + 'promotions?featured=true').pipe(map(dishes => dishes[0]))
+    .pipe(catchError(this.processHTTPMsgService.handleError));
   }
 
   // getPromotions(): Promise<Promotion[]> {

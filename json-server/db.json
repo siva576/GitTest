@@ -230,5 +230,226 @@
       "description": "Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. He says, Put together the cuisines from the two craziest cultures, and you get a winning hit! Amma Mia!"
     }
   ],
-  "feedback": []
+  "feedback": [
+    {
+      "firstname": "Bhuma Siva",
+      "lastname": "Reddy",
+      "telnum": "123456",
+      "email": "bhuma.net@gmail.com",
+      "agree": true,
+      "contacttype": "Email",
+      "message": "super food",
+      "id": 1
+    },
+    {
+      "firstname": "Bhuma Siva",
+      "lastname": "Reddy",
+      "telnum": "123456",
+      "email": "bhuma.net@gmail.com",
+      "agree": true,
+      "contacttype": "Email",
+      "message": "nice food sdfdsegsggse",
+      "id": 11
+    },
+    {
+      "firstname": "Bhuma Siva",
+      "lastname": "Reddy",
+      "telnum": "123456",
+      "email": "bhuma.net@gmail.com",
+      "agree": false,
+      "contacttype": "Tel",
+      "message": "good job",
+      "id": 12
+    },
+    {
+      "firstname": "Bhuma Siva",
+      "lastname": "Reddy",
+      "telnum": "123456",
+      "email": "bhuma.net@gmail.com",
+      "agree": true,
+      "contacttype": "Email",
+      "message": "nocwe  sdvfdfb",
+      "id": 13
+    },
+    {
+      "firstname": "Bhuma Siva",
+      "lastname": "Reddy",
+      "telnum": "123456",
+      "email": "bhuma.net@gmail.com",
+      "agree": true,
+      "contacttype": "Tel",
+      "message": "nice jub ",
+      "id": 14
+    },
+    {
+      "firstname": "Bhuma Siva",
+      "lastname": "Reddy",
+      "telnum": "123456",
+      "email": "bhuma.net@gmail.com",
+      "agree": true,
+      "contacttype": "Email",
+      "message": "sdhfthhdhdhdh",
+      "id": 15
+    },
+    {
+      "firstname": "Bhuma Siva",
+      "lastname": "Reddy",
+      "telnum": "123456",
+      "email": "bhuma.net@gmail.com",
+      "agree": true,
+      "contacttype": "Email",
+      "message": "true",
+      "id": 16
+    },
+    {
+      "firstname": "Bhuma Siva",
+      "lastname": "Reddy",
+      "telnum": "123456",
+      "email": "bhuma.net@gmail.com",
+      "agree": true,
+      "contacttype": "Tel",
+      "message": "new form",
+      "id": 17
+    },
+    {
+      "firstname": "Bhuma Siva",
+      "lastname": "Reddy",
+      "telnum": "123456",
+      "email": "bhuma.net@gmail.com",
+      "agree": true,
+      "contacttype": "Email",
+      "message": "you are welcome",
+      "id": 18
+    },
+    {
+      "firstname": "Bhuma Siva",
+      "lastname": "Reddy",
+      "telnum": "123456",
+      "email": "bhuma.net@gmail.com",
+      "agree": true,
+      "contacttype": "None",
+      "message": "ascfasfsvs",
+      "id": 19
+    },
+    {
+      "firstname": "Bhuma Siva",
+      "lastname": "Reddy",
+      "telnum": "123456",
+      "email": "bhuma.net@gmail.com",
+      "agree": true,
+      "contacttype": "Tel",
+      "message": "feed back",
+      "id": 20
+    },
+    {
+      "firstname": "Bhuma Siva",
+      "lastname": "Reddy",
+      "telnum": "123456",
+      "email": "bhuma.net@gmail.com",
+      "agree": true,
+      "contacttype": "Tel",
+      "message": "my feed back",
+      "id": 21
+    },
+    {
+      "firstname": "Bhuma Siva",
+      "lastname": "Reddy",
+      "telnum": "123456",
+      "email": "bhuma.net@gmail.com",
+      "agree": true,
+      "contacttype": "None",
+      "message": "fseggegssgge",
+      "id": 22
+    },
+    {
+      "firstname": "Bhuma Siva",
+      "lastname": "Reddy",
+      "telnum": "123456",
+      "email": "bhuma.net@gmail.com",
+      "agree": true,
+      "contacttype": "Email",
+      "message": "feed back",
+      "id": 23
+    },
+    {
+      "firstname": "Bhuma Siva",
+      "lastname": "Reddy",
+      "telnum": "123456",
+      "email": "bhuma.net@gmail.com",
+      "agree": true,
+      "contacttype": "None",
+      "message": "sdgsbsgs",
+      "id": 24
+    },
+    {
+      "firstname": "Bhuma Siva",
+      "lastname": "Reddy",
+      "telnum": "123456",
+      "email": "bhuma.net@gmail.com",
+      "agree": true,
+      "contacttype": "None",
+      "message": "egsegsg",
+      "id": 25
+    },
+    {
+      "firstname": "Bhuma Siva",
+      "lastname": "Reddy",
+      "telnum": "123456",
+      "email": "bhuma.net@gmail.com",
+      "agree": true,
+      "contacttype": "None",
+      "message": "sfgsgsgsg",
+      "id": 26
+    },
+    {
+      "firstname": "Bhuma Siva",
+      "lastname": "Reddy",
+      "telnum": "123456",
+      "email": "bhuma.net@gmail.com",
+      "agree": true,
+      "contacttype": "None",
+      "message": "dgdhdhdh",
+      "id": 27
+    },
+    {
+      "firstname": "Bhuma Siva",
+      "lastname": "Reddy",
+      "telnum": "123456",
+      "email": "bhuma.net@gmail.com",
+      "agree": true,
+      "contacttype": "None",
+      "message": "sefsegdgsgsh",
+      "id": 28
+    },
+    {
+      "firstname": "Bhuma Siva",
+      "lastname": "Reddy",
+      "telnum": "123456",
+      "email": "bhuma.net@gmail.com",
+      "agree": true,
+      "contacttype": "None",
+      "message": "sdbsdbsbsbsbd",
+      "id": 29
+    },
+    {
+      "firstname": "Bhuma Siva",
+      "lastname": "Reddy",
+      "telnum": "123456",
+      "email": "bhuma.net@gmail.com",
+      "agree": true,
+      "contacttype": "None",
+      "message": "svasvavvsa",
+      "id": 30
+    },
+    {
+      "firstname": "Bhuma Siva",
+      "lastname": "Reddy",
+      "telnum": "123456",
+      "email": "bhuma.net@gmail.com",
+      "agree": true,
+      "contacttype": "Email",
+      "message": "sdvsvgsdbsbs",
+      "id": 31
+    }
+  ]
 }

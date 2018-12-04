@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Feedback, ContactType } from '../shared/feedback';
 import { flyInOut, expand } from '../animations/app.animation';
+import { FeedbackService } from '../services/feedback.service';
 
 @Component({
   selector: 'app-contact',
@@ -23,7 +24,10 @@ export class ContactComponent implements OnInit {
   feedbackForm: FormGroup;
   feedback: Feedback;
   contactType = ContactType;
-
+  errMess: string;
+  showResponse: boolean;
+  showSpinner: boolean;
+  showFeedBackInput: boolean;
   formErrors = {
     'firstname': '',
     'lastname': '',
@@ -52,11 +56,14 @@ export class ContactComponent implements OnInit {
     },
   };
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private feedbackservice: FeedbackService) {
     this.createForm();
   }
 
   ngOnInit() {
+   this.showResponse = false;
+   this.showFeedBackInput = true;
+   this.showSpinner = false;
   }
 
   createForm(): void {
@@ -95,18 +102,62 @@ export class ContactComponent implements OnInit {
     }
   }
   onSubmit() {
+
+    this.showFeedBackInput = false;
+
     this.feedback = this.feedbackForm.value;
-    console.log(this.feedback);
-    this.feedbackForm.reset({
-      firstname: '',
-      lastname: '',
-      telnum: '',
-      email: '',
-      agree: false,
-      contacttype: 'None',
-      message: ''
-    });
+      this.feedbackservice.submitFeedback(this.feedback)
+    .subscribe(feedback => {
+      this.feedback = feedback;
+     // this.showResponse = true;
+      console.log(this.feedback);
+    },
+    errmess => { this.feedback = null;  this.errMess = <any>errmess; });
+
+    this.showSpinner = true;
+    this.showResponse = false;
+
+    setInterval(() => {
+      this.showSpinner = false;
+      this.showFeedBackInput = false;
+      this.showResponse = true;
+  }, 3000);
+    setInterval(() => {
+      this.showSpinner = false;
+      this.showResponse = false;
+    this.showFeedBackInput = true;
+  }, 5000);
+
+  this.feedbackForm.reset({
+    firstname: '',
+    lastname: '',
+    telnum: '',
+    email: '',
+    agree: false,
+    contacttype: 'None',
+    message: ''
+   });
     this.feedbackFormDirective.resetForm();
+    // this.feedbackForm.reset({
+    //   firstname: this.feedback.firstname,
+    //   lastname: this.feedback.lastname,
+    //   telnum: this.feedback.telnum,
+    //   email: this.feedback.email,
+    //   agree: this.feedback.agree,
+    //   contacttype: this.feedback.contacttype,
+    //   message: this.feedback.message
+    // });
+    // this.showFeedBackInput = true;
+    // this.feedbackForm.reset({
+    //   firstname: '',
+    //   lastname: '',
+    //   telnum: '',
+    //   email: '',
+    //   agree: false,
+    //   contacttype: 'None',
+    //   message: ''
+    // });
+    // this.feedbackFormDirective.resetForm();
   }
 
 }
